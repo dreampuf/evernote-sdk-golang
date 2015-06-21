@@ -4,7 +4,33 @@ This project was simple code generated from [Evernote-thrift](https://github.com
 
 # Simple
 
-TODO
+See [client_test.go](client/client_test.go)
+
+```golang
+c := NewClient(EvernoteKey, EvernoteSecret, SANDBOX)
+us, err := c.GetUserStore()
+if err != nil {
+    t.Fatal(err)
+}
+url, err := us.GetNoteStoreUrl(EvernoteAuthorToken)
+if err != nil {
+    t.Fatal(err)
+}
+if len(url) < 1 {
+    t.Fatal("Invalid URL")
+}
+ns, err := c.GetNoteStoreWithURL(url)
+if err != nil {
+    t.Fatal(err)
+}
+note, err := ns.GetDefaultNotebook(EvernoteAuthorToken)
+if err != nil {
+    t.Fatal(err)
+}
+if note == nil {
+    t.Fatal("Invalid Note")
+}
+```
 
 # How to generate yourself code
 
@@ -15,3 +41,4 @@ TODO
     thrift -strict -nowarn --allow-64bit-consts --allow-neg-keys --gen go:package_prefix=github.com/dreampuf/evernote-sdk-golang/ evernote-thrift/src/UserStore.thrift
 
 1. Enjoy!
+
