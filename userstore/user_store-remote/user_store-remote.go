@@ -138,15 +138,13 @@ func main() {
 			Usage()
 			return
 		}
-		argvalue1 := byte(tmp1)
-		value1 := argvalue1
+		value1 := int16(tmp1)
 		tmp2, err29 := (strconv.Atoi(flag.Arg(3)))
 		if err29 != nil {
 			Usage()
 			return
 		}
-		argvalue2 := byte(tmp2)
-		value2 := argvalue2
+		value2 := int16(tmp2)
 		fmt.Print(client.CheckVersion(value0, value1, value2))
 		fmt.Print("\n")
 		break
