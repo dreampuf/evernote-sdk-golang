@@ -4,6 +4,10 @@ This project was simple code generated from [Evernote-thrift](https://github.com
 
 # Simple
 
+```bash
+go get -u github.com/dreampuf/evernote-sdk-golang/...
+```
+
 See [client_test.go](client/client_test.go)
 
 ```golang
@@ -39,6 +43,10 @@ if note == nil {
 1. Generator with this command:
 
     thrift -strict -nowarn --allow-64bit-consts --allow-neg-keys --gen go:package_prefix=github.com/dreampuf/evernote-sdk-golang/ evernote-thrift/src/UserStore.thrift
+
+1. Rename the problem offical example from the generation:
+
+    mv notestore/note_store-remote/note_store-remote.go{,.out_of_time_official_example}
 
 1. Enjoy!
 
