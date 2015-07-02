@@ -2,7 +2,7 @@ package client
 
 import (
 	"fmt"
-	"git.apache.org/thrift.git/lib/go/thrift"
+	"github.com/apache/thrift/lib/go/thrift"
 	"github.com/dreampuf/evernote-sdk-golang/userstore"
 	"github.com/mrjones/oauth"
 	"github.com/dreampuf/evernote-sdk-golang/notestore"
