@@ -3,9 +3,9 @@ package client
 import (
 	"fmt"
 	"github.com/apache/thrift/lib/go/thrift"
+	"github.com/dreampuf/evernote-sdk-golang/notestore"
 	"github.com/dreampuf/evernote-sdk-golang/userstore"
 	"github.com/mrjones/oauth"
-	"github.com/dreampuf/evernote-sdk-golang/notestore"
 )
 
 type EnvironmentType int
@@ -13,18 +13,21 @@ type EnvironmentType int
 const (
 	SANDBOX EnvironmentType = iota
 	PRODUCTION
+	YINXIANG
 )
 
 type EvernoteClient struct {
 	host        string
 	oauthClient *oauth.Consumer
-	userStore 	*userstore.UserStoreClient
+	userStore   *userstore.UserStoreClient
 }
 
 func NewClient(key, secret string, envType EnvironmentType) *EvernoteClient {
 	host := "www.evernote.com"
 	if envType == SANDBOX {
 		host = "sandbox.evernote.com"
+	} else if envType == YINXIANG {
+		host = "app.yinxiang.com"
 	}
 	client := oauth.NewConsumer(
 		key, secret,
@@ -88,4 +91,3 @@ func (c *EvernoteClient) GetNoteStoreWithURL(notestoreURL string) (*notestore.No
 	)
 	return client, nil
 }
-
