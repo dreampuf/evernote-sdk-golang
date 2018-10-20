@@ -18960,7 +18960,7 @@ func (p *NoteStoreProcessor) Process(ctx context.Context, iprot, oprot thrift.TP
   oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
   x198.Write(oprot)
   oprot.WriteMessageEnd()
-  oprot.Flush()
+  oprot.Flush(ctx)
   return false, x198
 
 }
@@ -18977,7 +18977,7 @@ func (p *noteStoreProcessorGetSyncState) Process(ctx context.Context, seqId int3
     oprot.WriteMessageBegin("getSyncState", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -18996,7 +18996,7 @@ var retval *SyncState
     oprot.WriteMessageBegin("getSyncState", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19011,7 +19011,7 @@ var retval *SyncState
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19032,7 +19032,7 @@ func (p *noteStoreProcessorGetFilteredSyncChunk) Process(ctx context.Context, se
     oprot.WriteMessageBegin("getFilteredSyncChunk", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19051,7 +19051,7 @@ var retval *SyncChunk
     oprot.WriteMessageBegin("getFilteredSyncChunk", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19066,7 +19066,7 @@ var retval *SyncChunk
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19087,7 +19087,7 @@ func (p *noteStoreProcessorGetLinkedNotebookSyncState) Process(ctx context.Conte
     oprot.WriteMessageBegin("getLinkedNotebookSyncState", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19108,7 +19108,7 @@ var retval *SyncState
     oprot.WriteMessageBegin("getLinkedNotebookSyncState", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19123,7 +19123,7 @@ var retval *SyncState
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19144,7 +19144,7 @@ func (p *noteStoreProcessorGetLinkedNotebookSyncChunk) Process(ctx context.Conte
     oprot.WriteMessageBegin("getLinkedNotebookSyncChunk", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19165,7 +19165,7 @@ var retval *SyncChunk
     oprot.WriteMessageBegin("getLinkedNotebookSyncChunk", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19180,7 +19180,7 @@ var retval *SyncChunk
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19201,7 +19201,7 @@ func (p *noteStoreProcessorListNotebooks) Process(ctx context.Context, seqId int
     oprot.WriteMessageBegin("listNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19220,7 +19220,7 @@ var retval []*Notebook
     oprot.WriteMessageBegin("listNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19235,7 +19235,7 @@ var retval []*Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19256,7 +19256,7 @@ func (p *noteStoreProcessorListAccessibleBusinessNotebooks) Process(ctx context.
     oprot.WriteMessageBegin("listAccessibleBusinessNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19275,7 +19275,7 @@ var retval []*Notebook
     oprot.WriteMessageBegin("listAccessibleBusinessNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19290,7 +19290,7 @@ var retval []*Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19311,7 +19311,7 @@ func (p *noteStoreProcessorGetNotebook) Process(ctx context.Context, seqId int32
     oprot.WriteMessageBegin("getNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19332,7 +19332,7 @@ var retval *Notebook
     oprot.WriteMessageBegin("getNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19347,7 +19347,7 @@ var retval *Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19368,7 +19368,7 @@ func (p *noteStoreProcessorGetDefaultNotebook) Process(ctx context.Context, seqI
     oprot.WriteMessageBegin("getDefaultNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19387,7 +19387,7 @@ var retval *Notebook
     oprot.WriteMessageBegin("getDefaultNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19402,7 +19402,7 @@ var retval *Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19423,7 +19423,7 @@ func (p *noteStoreProcessorCreateNotebook) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("createNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19444,7 +19444,7 @@ var retval *Notebook
     oprot.WriteMessageBegin("createNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19459,7 +19459,7 @@ var retval *Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19480,7 +19480,7 @@ func (p *noteStoreProcessorUpdateNotebook) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("updateNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19501,7 +19501,7 @@ var retval int32
     oprot.WriteMessageBegin("updateNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19516,7 +19516,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19537,7 +19537,7 @@ func (p *noteStoreProcessorExpungeNotebook) Process(ctx context.Context, seqId i
     oprot.WriteMessageBegin("expungeNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19558,7 +19558,7 @@ var retval int32
     oprot.WriteMessageBegin("expungeNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19573,7 +19573,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19594,7 +19594,7 @@ func (p *noteStoreProcessorListTags) Process(ctx context.Context, seqId int32, i
     oprot.WriteMessageBegin("listTags", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19613,7 +19613,7 @@ var retval []*Tag
     oprot.WriteMessageBegin("listTags", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19628,7 +19628,7 @@ var retval []*Tag
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19649,7 +19649,7 @@ func (p *noteStoreProcessorListTagsByNotebook) Process(ctx context.Context, seqI
     oprot.WriteMessageBegin("listTagsByNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19670,7 +19670,7 @@ var retval []*Tag
     oprot.WriteMessageBegin("listTagsByNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19685,7 +19685,7 @@ var retval []*Tag
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19706,7 +19706,7 @@ func (p *noteStoreProcessorGetTag) Process(ctx context.Context, seqId int32, ipr
     oprot.WriteMessageBegin("getTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19727,7 +19727,7 @@ var retval *Tag
     oprot.WriteMessageBegin("getTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19742,7 +19742,7 @@ var retval *Tag
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19763,7 +19763,7 @@ func (p *noteStoreProcessorCreateTag) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("createTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19784,7 +19784,7 @@ var retval *Tag
     oprot.WriteMessageBegin("createTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19799,7 +19799,7 @@ var retval *Tag
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19820,7 +19820,7 @@ func (p *noteStoreProcessorUpdateTag) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("updateTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19841,7 +19841,7 @@ var retval int32
     oprot.WriteMessageBegin("updateTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19856,7 +19856,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19877,7 +19877,7 @@ func (p *noteStoreProcessorUntagAll) Process(ctx context.Context, seqId int32, i
     oprot.WriteMessageBegin("untagAll", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19897,7 +19897,7 @@ func (p *noteStoreProcessorUntagAll) Process(ctx context.Context, seqId int32, i
     oprot.WriteMessageBegin("untagAll", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -19910,7 +19910,7 @@ func (p *noteStoreProcessorUntagAll) Process(ctx context.Context, seqId int32, i
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19931,7 +19931,7 @@ func (p *noteStoreProcessorExpungeTag) Process(ctx context.Context, seqId int32,
     oprot.WriteMessageBegin("expungeTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -19952,7 +19952,7 @@ var retval int32
     oprot.WriteMessageBegin("expungeTag", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -19967,7 +19967,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -19988,7 +19988,7 @@ func (p *noteStoreProcessorListSearches) Process(ctx context.Context, seqId int3
     oprot.WriteMessageBegin("listSearches", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20007,7 +20007,7 @@ var retval []*SavedSearch
     oprot.WriteMessageBegin("listSearches", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20022,7 +20022,7 @@ var retval []*SavedSearch
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20043,7 +20043,7 @@ func (p *noteStoreProcessorGetSearch) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("getSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20064,7 +20064,7 @@ var retval *SavedSearch
     oprot.WriteMessageBegin("getSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20079,7 +20079,7 @@ var retval *SavedSearch
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20100,7 +20100,7 @@ func (p *noteStoreProcessorCreateSearch) Process(ctx context.Context, seqId int3
     oprot.WriteMessageBegin("createSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20119,7 +20119,7 @@ var retval *SavedSearch
     oprot.WriteMessageBegin("createSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20134,7 +20134,7 @@ var retval *SavedSearch
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20155,7 +20155,7 @@ func (p *noteStoreProcessorUpdateSearch) Process(ctx context.Context, seqId int3
     oprot.WriteMessageBegin("updateSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20176,7 +20176,7 @@ var retval int32
     oprot.WriteMessageBegin("updateSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20191,7 +20191,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20212,7 +20212,7 @@ func (p *noteStoreProcessorExpungeSearch) Process(ctx context.Context, seqId int
     oprot.WriteMessageBegin("expungeSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20233,7 +20233,7 @@ var retval int32
     oprot.WriteMessageBegin("expungeSearch", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20248,7 +20248,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20269,7 +20269,7 @@ func (p *noteStoreProcessorFindNoteOffset) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("findNoteOffset", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20290,7 +20290,7 @@ var retval int32
     oprot.WriteMessageBegin("findNoteOffset", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20305,7 +20305,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20326,7 +20326,7 @@ func (p *noteStoreProcessorFindNotesMetadata) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("findNotesMetadata", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20347,7 +20347,7 @@ var retval *NotesMetadataList
     oprot.WriteMessageBegin("findNotesMetadata", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20362,7 +20362,7 @@ var retval *NotesMetadataList
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20383,7 +20383,7 @@ func (p *noteStoreProcessorFindNoteCounts) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("findNoteCounts", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20404,7 +20404,7 @@ var retval *NoteCollectionCounts
     oprot.WriteMessageBegin("findNoteCounts", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20419,7 +20419,7 @@ var retval *NoteCollectionCounts
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20440,7 +20440,7 @@ func (p *noteStoreProcessorGetNoteWithResultSpec) Process(ctx context.Context, s
     oprot.WriteMessageBegin("getNoteWithResultSpec", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20461,7 +20461,7 @@ var retval *Note
     oprot.WriteMessageBegin("getNoteWithResultSpec", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20476,7 +20476,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20497,7 +20497,7 @@ func (p *noteStoreProcessorGetNote) Process(ctx context.Context, seqId int32, ip
     oprot.WriteMessageBegin("getNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20518,7 +20518,7 @@ var retval *Note
     oprot.WriteMessageBegin("getNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20533,7 +20533,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20554,7 +20554,7 @@ func (p *noteStoreProcessorGetNoteApplicationData) Process(ctx context.Context, 
     oprot.WriteMessageBegin("getNoteApplicationData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20575,7 +20575,7 @@ var retval *LazyMap
     oprot.WriteMessageBegin("getNoteApplicationData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20590,7 +20590,7 @@ var retval *LazyMap
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20611,7 +20611,7 @@ func (p *noteStoreProcessorGetNoteApplicationDataEntry) Process(ctx context.Cont
     oprot.WriteMessageBegin("getNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20632,7 +20632,7 @@ var retval string
     oprot.WriteMessageBegin("getNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20647,7 +20647,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20668,7 +20668,7 @@ func (p *noteStoreProcessorSetNoteApplicationDataEntry) Process(ctx context.Cont
     oprot.WriteMessageBegin("setNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20689,7 +20689,7 @@ var retval int32
     oprot.WriteMessageBegin("setNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20704,7 +20704,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20725,7 +20725,7 @@ func (p *noteStoreProcessorUnsetNoteApplicationDataEntry) Process(ctx context.Co
     oprot.WriteMessageBegin("unsetNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20746,7 +20746,7 @@ var retval int32
     oprot.WriteMessageBegin("unsetNoteApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20761,7 +20761,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20782,7 +20782,7 @@ func (p *noteStoreProcessorGetNoteContent) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("getNoteContent", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20803,7 +20803,7 @@ var retval string
     oprot.WriteMessageBegin("getNoteContent", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20818,7 +20818,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20839,7 +20839,7 @@ func (p *noteStoreProcessorGetNoteSearchText) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("getNoteSearchText", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20860,7 +20860,7 @@ var retval string
     oprot.WriteMessageBegin("getNoteSearchText", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20875,7 +20875,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20896,7 +20896,7 @@ func (p *noteStoreProcessorGetResourceSearchText) Process(ctx context.Context, s
     oprot.WriteMessageBegin("getResourceSearchText", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20917,7 +20917,7 @@ var retval string
     oprot.WriteMessageBegin("getResourceSearchText", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20932,7 +20932,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -20953,7 +20953,7 @@ func (p *noteStoreProcessorGetNoteTagNames) Process(ctx context.Context, seqId i
     oprot.WriteMessageBegin("getNoteTagNames", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -20974,7 +20974,7 @@ var retval []string
     oprot.WriteMessageBegin("getNoteTagNames", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -20989,7 +20989,7 @@ var retval []string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21010,7 +21010,7 @@ func (p *noteStoreProcessorCreateNote) Process(ctx context.Context, seqId int32,
     oprot.WriteMessageBegin("createNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21031,7 +21031,7 @@ var retval *Note
     oprot.WriteMessageBegin("createNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21046,7 +21046,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21067,7 +21067,7 @@ func (p *noteStoreProcessorUpdateNote) Process(ctx context.Context, seqId int32,
     oprot.WriteMessageBegin("updateNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21088,7 +21088,7 @@ var retval *Note
     oprot.WriteMessageBegin("updateNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21103,7 +21103,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21124,7 +21124,7 @@ func (p *noteStoreProcessorDeleteNote) Process(ctx context.Context, seqId int32,
     oprot.WriteMessageBegin("deleteNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21145,7 +21145,7 @@ var retval int32
     oprot.WriteMessageBegin("deleteNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21160,7 +21160,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21181,7 +21181,7 @@ func (p *noteStoreProcessorExpungeNote) Process(ctx context.Context, seqId int32
     oprot.WriteMessageBegin("expungeNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21202,7 +21202,7 @@ var retval int32
     oprot.WriteMessageBegin("expungeNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21217,7 +21217,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21238,7 +21238,7 @@ func (p *noteStoreProcessorCopyNote) Process(ctx context.Context, seqId int32, i
     oprot.WriteMessageBegin("copyNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21259,7 +21259,7 @@ var retval *Note
     oprot.WriteMessageBegin("copyNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21274,7 +21274,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21295,7 +21295,7 @@ func (p *noteStoreProcessorListNoteVersions) Process(ctx context.Context, seqId 
     oprot.WriteMessageBegin("listNoteVersions", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21316,7 +21316,7 @@ var retval []*NoteVersionId
     oprot.WriteMessageBegin("listNoteVersions", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21331,7 +21331,7 @@ var retval []*NoteVersionId
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21352,7 +21352,7 @@ func (p *noteStoreProcessorGetNoteVersion) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("getNoteVersion", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21373,7 +21373,7 @@ var retval *Note
     oprot.WriteMessageBegin("getNoteVersion", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21388,7 +21388,7 @@ var retval *Note
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21409,7 +21409,7 @@ func (p *noteStoreProcessorGetResource) Process(ctx context.Context, seqId int32
     oprot.WriteMessageBegin("getResource", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21430,7 +21430,7 @@ var retval *Resource
     oprot.WriteMessageBegin("getResource", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21445,7 +21445,7 @@ var retval *Resource
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21466,7 +21466,7 @@ func (p *noteStoreProcessorGetResourceApplicationData) Process(ctx context.Conte
     oprot.WriteMessageBegin("getResourceApplicationData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21487,7 +21487,7 @@ var retval *LazyMap
     oprot.WriteMessageBegin("getResourceApplicationData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21502,7 +21502,7 @@ var retval *LazyMap
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21523,7 +21523,7 @@ func (p *noteStoreProcessorGetResourceApplicationDataEntry) Process(ctx context.
     oprot.WriteMessageBegin("getResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21544,7 +21544,7 @@ var retval string
     oprot.WriteMessageBegin("getResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21559,7 +21559,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21580,7 +21580,7 @@ func (p *noteStoreProcessorSetResourceApplicationDataEntry) Process(ctx context.
     oprot.WriteMessageBegin("setResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21601,7 +21601,7 @@ var retval int32
     oprot.WriteMessageBegin("setResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21616,7 +21616,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21637,7 +21637,7 @@ func (p *noteStoreProcessorUnsetResourceApplicationDataEntry) Process(ctx contex
     oprot.WriteMessageBegin("unsetResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21658,7 +21658,7 @@ var retval int32
     oprot.WriteMessageBegin("unsetResourceApplicationDataEntry", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21673,7 +21673,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21694,7 +21694,7 @@ func (p *noteStoreProcessorUpdateResource) Process(ctx context.Context, seqId in
     oprot.WriteMessageBegin("updateResource", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21715,7 +21715,7 @@ var retval int32
     oprot.WriteMessageBegin("updateResource", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21730,7 +21730,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21751,7 +21751,7 @@ func (p *noteStoreProcessorGetResourceData) Process(ctx context.Context, seqId i
     oprot.WriteMessageBegin("getResourceData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21772,7 +21772,7 @@ var retval []byte
     oprot.WriteMessageBegin("getResourceData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21787,7 +21787,7 @@ var retval []byte
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21808,7 +21808,7 @@ func (p *noteStoreProcessorGetResourceByHash) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("getResourceByHash", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21829,7 +21829,7 @@ var retval *Resource
     oprot.WriteMessageBegin("getResourceByHash", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21844,7 +21844,7 @@ var retval *Resource
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21865,7 +21865,7 @@ func (p *noteStoreProcessorGetResourceRecognition) Process(ctx context.Context, 
     oprot.WriteMessageBegin("getResourceRecognition", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21886,7 +21886,7 @@ var retval []byte
     oprot.WriteMessageBegin("getResourceRecognition", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21901,7 +21901,7 @@ var retval []byte
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21922,7 +21922,7 @@ func (p *noteStoreProcessorGetResourceAlternateData) Process(ctx context.Context
     oprot.WriteMessageBegin("getResourceAlternateData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -21943,7 +21943,7 @@ var retval []byte
     oprot.WriteMessageBegin("getResourceAlternateData", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -21958,7 +21958,7 @@ var retval []byte
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -21979,7 +21979,7 @@ func (p *noteStoreProcessorGetResourceAttributes) Process(ctx context.Context, s
     oprot.WriteMessageBegin("getResourceAttributes", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22000,7 +22000,7 @@ var retval *ResourceAttributes
     oprot.WriteMessageBegin("getResourceAttributes", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22015,7 +22015,7 @@ var retval *ResourceAttributes
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22036,7 +22036,7 @@ func (p *noteStoreProcessorGetPublicNotebook) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("getPublicNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22055,7 +22055,7 @@ var retval *Notebook
     oprot.WriteMessageBegin("getPublicNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22070,7 +22070,7 @@ var retval *Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22091,7 +22091,7 @@ func (p *noteStoreProcessorShareNotebook) Process(ctx context.Context, seqId int
     oprot.WriteMessageBegin("shareNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22112,7 +22112,7 @@ var retval *SharedNotebook
     oprot.WriteMessageBegin("shareNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22127,7 +22127,7 @@ var retval *SharedNotebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22148,7 +22148,7 @@ func (p *noteStoreProcessorCreateOrUpdateNotebookShares) Process(ctx context.Con
     oprot.WriteMessageBegin("createOrUpdateNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22171,7 +22171,7 @@ var retval *CreateOrUpdateNotebookSharesResult_
     oprot.WriteMessageBegin("createOrUpdateNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22186,7 +22186,7 @@ var retval *CreateOrUpdateNotebookSharesResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22207,7 +22207,7 @@ func (p *noteStoreProcessorUpdateSharedNotebook) Process(ctx context.Context, se
     oprot.WriteMessageBegin("updateSharedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22228,7 +22228,7 @@ var retval int32
     oprot.WriteMessageBegin("updateSharedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22243,7 +22243,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22264,7 +22264,7 @@ func (p *noteStoreProcessorSetNotebookRecipientSettings) Process(ctx context.Con
     oprot.WriteMessageBegin("setNotebookRecipientSettings", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22285,7 +22285,7 @@ var retval *Notebook
     oprot.WriteMessageBegin("setNotebookRecipientSettings", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22300,7 +22300,7 @@ var retval *Notebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22321,7 +22321,7 @@ func (p *noteStoreProcessorListSharedNotebooks) Process(ctx context.Context, seq
     oprot.WriteMessageBegin("listSharedNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22342,7 +22342,7 @@ var retval []*SharedNotebook
     oprot.WriteMessageBegin("listSharedNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22357,7 +22357,7 @@ var retval []*SharedNotebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22378,7 +22378,7 @@ func (p *noteStoreProcessorCreateLinkedNotebook) Process(ctx context.Context, se
     oprot.WriteMessageBegin("createLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22399,7 +22399,7 @@ var retval *LinkedNotebook
     oprot.WriteMessageBegin("createLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22414,7 +22414,7 @@ var retval *LinkedNotebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22435,7 +22435,7 @@ func (p *noteStoreProcessorUpdateLinkedNotebook) Process(ctx context.Context, se
     oprot.WriteMessageBegin("updateLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22456,7 +22456,7 @@ var retval int32
     oprot.WriteMessageBegin("updateLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22471,7 +22471,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22492,7 +22492,7 @@ func (p *noteStoreProcessorListLinkedNotebooks) Process(ctx context.Context, seq
     oprot.WriteMessageBegin("listLinkedNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22513,7 +22513,7 @@ var retval []*LinkedNotebook
     oprot.WriteMessageBegin("listLinkedNotebooks", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22528,7 +22528,7 @@ var retval []*LinkedNotebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22549,7 +22549,7 @@ func (p *noteStoreProcessorExpungeLinkedNotebook) Process(ctx context.Context, s
     oprot.WriteMessageBegin("expungeLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22570,7 +22570,7 @@ var retval int32
     oprot.WriteMessageBegin("expungeLinkedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22585,7 +22585,7 @@ var retval int32
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22606,7 +22606,7 @@ func (p *noteStoreProcessorAuthenticateToSharedNotebook) Process(ctx context.Con
     oprot.WriteMessageBegin("authenticateToSharedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22627,7 +22627,7 @@ var retval *AuthenticationResult_
     oprot.WriteMessageBegin("authenticateToSharedNotebook", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22642,7 +22642,7 @@ var retval *AuthenticationResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22663,7 +22663,7 @@ func (p *noteStoreProcessorGetSharedNotebookByAuth) Process(ctx context.Context,
     oprot.WriteMessageBegin("getSharedNotebookByAuth", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22684,7 +22684,7 @@ var retval *SharedNotebook
     oprot.WriteMessageBegin("getSharedNotebookByAuth", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22699,7 +22699,7 @@ var retval *SharedNotebook
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22720,7 +22720,7 @@ func (p *noteStoreProcessorEmailNote) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("emailNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22740,7 +22740,7 @@ func (p *noteStoreProcessorEmailNote) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("emailNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -22753,7 +22753,7 @@ func (p *noteStoreProcessorEmailNote) Process(ctx context.Context, seqId int32, 
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22774,7 +22774,7 @@ func (p *noteStoreProcessorShareNote) Process(ctx context.Context, seqId int32, 
     oprot.WriteMessageBegin("shareNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22795,7 +22795,7 @@ var retval string
     oprot.WriteMessageBegin("shareNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22810,7 +22810,7 @@ var retval string
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22831,7 +22831,7 @@ func (p *noteStoreProcessorStopSharingNote) Process(ctx context.Context, seqId i
     oprot.WriteMessageBegin("stopSharingNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22851,7 +22851,7 @@ func (p *noteStoreProcessorStopSharingNote) Process(ctx context.Context, seqId i
     oprot.WriteMessageBegin("stopSharingNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -22864,7 +22864,7 @@ func (p *noteStoreProcessorStopSharingNote) Process(ctx context.Context, seqId i
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22885,7 +22885,7 @@ func (p *noteStoreProcessorAuthenticateToSharedNote) Process(ctx context.Context
     oprot.WriteMessageBegin("authenticateToSharedNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22906,7 +22906,7 @@ var retval *AuthenticationResult_
     oprot.WriteMessageBegin("authenticateToSharedNote", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22921,7 +22921,7 @@ var retval *AuthenticationResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22942,7 +22942,7 @@ func (p *noteStoreProcessorFindRelated) Process(ctx context.Context, seqId int32
     oprot.WriteMessageBegin("findRelated", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -22963,7 +22963,7 @@ var retval *RelatedResult_
     oprot.WriteMessageBegin("findRelated", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -22978,7 +22978,7 @@ var retval *RelatedResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -22999,7 +22999,7 @@ func (p *noteStoreProcessorUpdateNoteIfUsnMatches) Process(ctx context.Context, 
     oprot.WriteMessageBegin("updateNoteIfUsnMatches", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -23020,7 +23020,7 @@ var retval *UpdateNoteIfUsnMatchesResult_
     oprot.WriteMessageBegin("updateNoteIfUsnMatches", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -23035,7 +23035,7 @@ var retval *UpdateNoteIfUsnMatchesResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -23056,7 +23056,7 @@ func (p *noteStoreProcessorManageNotebookShares) Process(ctx context.Context, se
     oprot.WriteMessageBegin("manageNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -23077,7 +23077,7 @@ var retval *ManageNotebookSharesResult_
     oprot.WriteMessageBegin("manageNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -23092,7 +23092,7 @@ var retval *ManageNotebookSharesResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -23113,7 +23113,7 @@ func (p *noteStoreProcessorGetNotebookShares) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("getNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -23134,7 +23134,7 @@ var retval *ShareRelationships
     oprot.WriteMessageBegin("getNotebookShares", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -23149,7 +23149,7 @@ var retval *ShareRelationships
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {

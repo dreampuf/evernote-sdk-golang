@@ -3497,7 +3497,7 @@ func (p *UserStoreProcessor) Process(ctx context.Context, iprot, oprot thrift.TP
   oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
   x32.Write(oprot)
   oprot.WriteMessageEnd()
-  oprot.Flush()
+  oprot.Flush(ctx)
   return false, x32
 
 }
@@ -3514,7 +3514,7 @@ func (p *userStoreProcessorCheckVersion) Process(ctx context.Context, seqId int3
     oprot.WriteMessageBegin("checkVersion", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3527,7 +3527,7 @@ var retval bool
     oprot.WriteMessageBegin("checkVersion", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   } else {
     result.Success = &retval
@@ -3541,7 +3541,7 @@ var retval bool
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3562,7 +3562,7 @@ func (p *userStoreProcessorGetBootstrapInfo) Process(ctx context.Context, seqId 
     oprot.WriteMessageBegin("getBootstrapInfo", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3575,7 +3575,7 @@ var retval *BootstrapInfo
     oprot.WriteMessageBegin("getBootstrapInfo", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   } else {
     result.Success = retval
@@ -3589,7 +3589,7 @@ var retval *BootstrapInfo
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3610,7 +3610,7 @@ func (p *userStoreProcessorAuthenticateLongSession) Process(ctx context.Context,
     oprot.WriteMessageBegin("authenticateLongSession", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3629,7 +3629,7 @@ var retval *AuthenticationResult_
     oprot.WriteMessageBegin("authenticateLongSession", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3644,7 +3644,7 @@ var retval *AuthenticationResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3665,7 +3665,7 @@ func (p *userStoreProcessorCompleteTwoFactorAuthentication) Process(ctx context.
     oprot.WriteMessageBegin("completeTwoFactorAuthentication", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3684,7 +3684,7 @@ var retval *AuthenticationResult_
     oprot.WriteMessageBegin("completeTwoFactorAuthentication", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3699,7 +3699,7 @@ var retval *AuthenticationResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3720,7 +3720,7 @@ func (p *userStoreProcessorRevokeLongSession) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("revokeLongSession", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3738,7 +3738,7 @@ func (p *userStoreProcessorRevokeLongSession) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("revokeLongSession", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -3751,7 +3751,7 @@ func (p *userStoreProcessorRevokeLongSession) Process(ctx context.Context, seqId
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3772,7 +3772,7 @@ func (p *userStoreProcessorAuthenticateToBusiness) Process(ctx context.Context, 
     oprot.WriteMessageBegin("authenticateToBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3791,7 +3791,7 @@ var retval *AuthenticationResult_
     oprot.WriteMessageBegin("authenticateToBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3806,7 +3806,7 @@ var retval *AuthenticationResult_
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3827,7 +3827,7 @@ func (p *userStoreProcessorGetUser) Process(ctx context.Context, seqId int32, ip
     oprot.WriteMessageBegin("getUser", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3846,7 +3846,7 @@ var retval *User
     oprot.WriteMessageBegin("getUser", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3861,7 +3861,7 @@ var retval *User
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3882,7 +3882,7 @@ func (p *userStoreProcessorGetPublicUserInfo) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("getPublicUserInfo", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3903,7 +3903,7 @@ var retval *PublicUserInfo
     oprot.WriteMessageBegin("getPublicUserInfo", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3918,7 +3918,7 @@ var retval *PublicUserInfo
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3939,7 +3939,7 @@ func (p *userStoreProcessorGetUserUrls) Process(ctx context.Context, seqId int32
     oprot.WriteMessageBegin("getUserUrls", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -3958,7 +3958,7 @@ var retval *UserUrls
     oprot.WriteMessageBegin("getUserUrls", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -3973,7 +3973,7 @@ var retval *UserUrls
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -3994,7 +3994,7 @@ func (p *userStoreProcessorInviteToBusiness) Process(ctx context.Context, seqId 
     oprot.WriteMessageBegin("inviteToBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4012,7 +4012,7 @@ func (p *userStoreProcessorInviteToBusiness) Process(ctx context.Context, seqId 
     oprot.WriteMessageBegin("inviteToBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -4025,7 +4025,7 @@ func (p *userStoreProcessorInviteToBusiness) Process(ctx context.Context, seqId 
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -4046,7 +4046,7 @@ func (p *userStoreProcessorRemoveFromBusiness) Process(ctx context.Context, seqI
     oprot.WriteMessageBegin("removeFromBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4066,7 +4066,7 @@ func (p *userStoreProcessorRemoveFromBusiness) Process(ctx context.Context, seqI
     oprot.WriteMessageBegin("removeFromBusiness", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -4079,7 +4079,7 @@ func (p *userStoreProcessorRemoveFromBusiness) Process(ctx context.Context, seqI
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -4100,7 +4100,7 @@ func (p *userStoreProcessorUpdateBusinessUserIdentifier) Process(ctx context.Con
     oprot.WriteMessageBegin("updateBusinessUserIdentifier", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4120,7 +4120,7 @@ func (p *userStoreProcessorUpdateBusinessUserIdentifier) Process(ctx context.Con
     oprot.WriteMessageBegin("updateBusinessUserIdentifier", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   }
@@ -4133,7 +4133,7 @@ func (p *userStoreProcessorUpdateBusinessUserIdentifier) Process(ctx context.Con
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -4154,7 +4154,7 @@ func (p *userStoreProcessorListBusinessUsers) Process(ctx context.Context, seqId
     oprot.WriteMessageBegin("listBusinessUsers", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4173,7 +4173,7 @@ var retval []*UserProfile
     oprot.WriteMessageBegin("listBusinessUsers", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -4188,7 +4188,7 @@ var retval []*UserProfile
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -4209,7 +4209,7 @@ func (p *userStoreProcessorListBusinessInvitations) Process(ctx context.Context,
     oprot.WriteMessageBegin("listBusinessInvitations", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4228,7 +4228,7 @@ var retval []*BusinessInvitation
     oprot.WriteMessageBegin("listBusinessInvitations", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -4243,7 +4243,7 @@ var retval []*BusinessInvitation
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
@@ -4264,7 +4264,7 @@ func (p *userStoreProcessorGetAccountLimits) Process(ctx context.Context, seqId 
     oprot.WriteMessageBegin("getAccountLimits", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return false, err
   }
 
@@ -4281,7 +4281,7 @@ var retval *AccountLimits
     oprot.WriteMessageBegin("getAccountLimits", thrift.EXCEPTION, seqId)
     x.Write(oprot)
     oprot.WriteMessageEnd()
-    oprot.Flush()
+    oprot.Flush(ctx)
     return true, err2
   }
   } else {
@@ -4296,7 +4296,7 @@ var retval *AccountLimits
   if err2 = oprot.WriteMessageEnd(); err == nil && err2 != nil {
     err = err2
   }
-  if err2 = oprot.Flush(); err == nil && err2 != nil {
+  if err2 = oprot.Flush(ctx); err == nil && err2 != nil {
     err = err2
   }
   if err != nil {
