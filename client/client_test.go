@@ -1,6 +1,8 @@
 package client
 import (
+	"context"
 	"testing"
+	"time"
 )
 const (
 	EvernoteKey string = ""
@@ -10,23 +12,21 @@ const (
 
 
 func TestClient(t *testing.T) {
+	clientCtx, _ := context.WithTimeout(context.Background(), time.Duration(15) * time.Second)
 	c := NewClient(EvernoteKey, EvernoteSecret, SANDBOX)
 	us, err := c.GetUserStore()
 	if err != nil {
 		t.Fatal(err)
 	}
-	url, err := us.GetNoteStoreUrl(EvernoteAuthorToken)
+	userUrls, err := us.GetUserUrls(clientCtx, EvernoteAuthorToken)
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(url) < 1 {
-		t.Fatal("Invalid URL")
-	}
-	ns, err := c.GetNoteStoreWithURL(url)
+	ns, err := c.GetNoteStoreWithURL(userUrls.GetNoteStoreUrl())
 	if err != nil {
 		t.Fatal(err)
 	}
-	note, err := ns.GetDefaultNotebook(EvernoteAuthorToken)
+	note, err := ns.GetDefaultNotebook(clientCtx, EvernoteAuthorToken)
 	if err != nil {
 		t.Fatal(err)
 	}

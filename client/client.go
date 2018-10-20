@@ -1,10 +1,10 @@
 package client
 
 import (
+	"context"
 	"fmt"
 	"github.com/apache/thrift/lib/go/thrift"
-	"github.com/dreampuf/evernote-sdk-golang/notestore"
-	"github.com/dreampuf/evernote-sdk-golang/userstore"
+	"github.com/dreampuf/evernote-sdk-golang/edam"
 	"github.com/mrjones/oauth"
 )
 
@@ -19,7 +19,7 @@ const (
 type EvernoteClient struct {
 	host        string
 	oauthClient *oauth.Consumer
-	userStore   *userstore.UserStoreClient
+	userStore   *edam.UserStoreClient
 }
 
 func NewClient(key, secret string, envType EnvironmentType) *EvernoteClient {
@@ -51,43 +51,39 @@ func (c *EvernoteClient) GetAuthorizedToken(requestToken *oauth.RequestToken, oa
 	return c.oauthClient.AuthorizeToken(requestToken, oauthVerifier)
 }
 
-func (c *EvernoteClient) GetUserStore() (*userstore.UserStoreClient, error) {
+func (c *EvernoteClient) GetUserStore() (*edam.UserStoreClient, error) {
 	if c.userStore != nil {
 		return c.userStore, nil
 	}
 	evernoteUserStoreServerURL := fmt.Sprintf("https://%s/edam/user", c.host)
-	evernoteUserTrans, err := thrift.NewTHttpPostClient(evernoteUserStoreServerURL)
+	thriftTransport, err := thrift.NewTHttpClient(evernoteUserStoreServerURL)
+	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory().GetProtocol(thriftTransport))
 	if err != nil {
 		return nil, err
 	}
-	c.userStore = userstore.NewUserStoreClientFactory(
-		evernoteUserTrans,
-		thrift.NewTBinaryProtocolFactoryDefault(),
-	)
+	c.userStore = edam.NewUserStoreClient(thriftClient)
 	return c.userStore, nil
 }
 
-func (c *EvernoteClient) GetNoteStore(authenticationToken string) (*notestore.NoteStoreClient, error) {
+func (c *EvernoteClient) GetNoteStore(ctx context.Context, authenticationToken string) (*edam.NoteStoreClient, error) {
 	us, err := c.GetUserStore()
 	if err != nil {
 		return nil, err
 	}
-	notestoreURL, err := us.GetNoteStoreUrl(authenticationToken)
+	userUrls, err := us.GetUserUrls(ctx, authenticationToken)
 	if err != nil {
 		return nil, err
 	}
-	ns, err := c.GetNoteStoreWithURL(notestoreURL)
+
+	ns, err := c.GetNoteStoreWithURL(userUrls.GetNoteStoreUrl())
 	return ns, nil
 }
 
-func (c *EvernoteClient) GetNoteStoreWithURL(notestoreURL string) (*notestore.NoteStoreClient, error) {
-	evernoteNoteTrans, err := thrift.NewTHttpPostClient(notestoreURL)
+func (c *EvernoteClient) GetNoteStoreWithURL(notestoreURL string) (*edam.NoteStoreClient, error) {
+	thriftTransport, err := thrift.NewTHttpClient(notestoreURL)
+	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory().GetProtocol(thriftTransport))
 	if err != nil {
 		return nil, err
 	}
-	client := notestore.NewNoteStoreClientFactory(
-		evernoteNoteTrans,
-		thrift.NewTBinaryProtocolFactoryDefault(),
-	)
-	return client, nil
+	return edam.NewNoteStoreClient(thriftClient), nil
 }
