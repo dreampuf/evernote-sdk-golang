@@ -57,7 +57,7 @@ func (c *EvernoteClient) GetUserStore() (*edam.UserStoreClient, error) {
 	}
 	evernoteUserStoreServerURL := fmt.Sprintf("https://%s/edam/user", c.host)
 	thriftTransport, err := thrift.NewTHttpClient(evernoteUserStoreServerURL)
-	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory().GetProtocol(thriftTransport))
+	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory(true, true).GetProtocol(thriftTransport))
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func (c *EvernoteClient) GetNoteStore(ctx context.Context, authenticationToken s
 
 func (c *EvernoteClient) GetNoteStoreWithURL(notestoreURL string) (*edam.NoteStoreClient, error) {
 	thriftTransport, err := thrift.NewTHttpClient(notestoreURL)
-	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory().GetProtocol(thriftTransport))
+	thriftClient := thrift.NewTStandardClient(thrift.NewTBinaryProtocolFactoryDefault().GetProtocol(thriftTransport), thrift.NewTBinaryProtocolFactory(true, true).GetProtocol(thriftTransport))
 	if err != nil {
 		return nil, err
 	}
