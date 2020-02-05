@@ -71,6 +71,7 @@ func TestRequestToken(t *testing.T) {
 	PRODUCTION: evernote production
 	SANDBOX: evernote sandbox
 	YINXIANG: yinxiangbiji
+	YINXIANGSANDBOX: yinxiangbiji sandbox
 	 */
 	c := NewClient(EvernoteKey, EvernoteSecret, SANDBOX)
 	callBackURL := "http://YOUR_SERVER_CALL_BACK_URL"
